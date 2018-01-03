@@ -1,0 +1,21 @@
+Source: nemo-mediainfo-tab
+Section: gnome
+Priority: extra
+Maintainer: Caldas Lopes <joao.caldas.lopes@gmail.com>
+Build-Depends: debhelper (>= 9),
+               python-all,
+               python-distutils-extra,
+               dh-python
+Standards-Version: 3.9.6
+Homepage: https://github.com/linux-man/nemo-mediainfo-tab
+
+Package: nemo-mediainfo-tab
+Architecture: all
+Section: utils
+Priority: extra
+Depends: ${python:Depends},
+         ${misc:Depends},
+         nemo,
+         python-nemo,
+         python-mediainfodll
+Description: View media information from the properties tab
