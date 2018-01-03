@@ -1,13 +1,14 @@
 # nemo-mediainfo-tab
 View media information from the properties tab
 
-##Uses mediainfo lib (https://mediaarea.net/en/MediaInfo)
+## Uses mediainfo lib (https://mediaarea.net/en/MediaInfo)
 
-##Installation
+## Installation
+
 ppa:caldas-lopes/ppa
 
 or
 
 https://github.com/linux-man/nemo-mediainfo-tab/releases
 
-##TODO: Translations
+## TODO: Translations
