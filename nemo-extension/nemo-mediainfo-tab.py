@@ -4,7 +4,7 @@
 import urllib
 import locale, gettext, os
 
-from gi.repository import GObject, Gio, Gtk, Nemo
+from gi.repository import GObject, Gtk, Nemo
 
 from MediaInfoDLL import *
 
