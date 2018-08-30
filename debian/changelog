@@ -1,3 +1,9 @@
+nemo-mediainfo-tab (0.2) xenial; urgency=medium
+
+  * Add nemo-python to dependencies
+
+ -- Caldas Lopes <joao.caldas.lopes@gmail.com>  Thu, 30 Aug 2018 15:14:32 +0100
+
 nemo-mediainfo-tab (0.1) xenial; urgency=medium
 
   * Initial release
