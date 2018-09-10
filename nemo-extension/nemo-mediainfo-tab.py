@@ -8,6 +8,13 @@ from gi.repository import GObject, Gtk, Nemo
 
 from MediaInfoDLL import *
 
+lang = locale.getdefaultlocale()[0]
+locale_path = os.path.join(os.path.dirname(__file__), "nemo-mediainfo-tab/locale")
+locale_file = os.path.join(locale_path, lang+".csv")
+if(not os.path.isfile(locale_file)):
+  lang = lang.split("_")[0]
+  locale_file = os.path.join(locale_path, lang+".csv")
+
 GUI = """
 <interface>
   <requires lib="gtk+" version="3.0"/>
@@ -52,6 +59,7 @@ class MediainfoPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.Nam
     MI = MediaInfo()
     MI.Open(filename.decode("utf-8"))
     MI.Option_Static("Complete")
+    MI.Option_Static("Language", "file://{}".format(locale_file))
     info = MI.Inform().splitlines()
     if len(info) < 8:
       return
