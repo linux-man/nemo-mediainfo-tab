@@ -11,4 +11,7 @@ or
 
 https://github.com/linux-man/nemo-mediainfo-tab/releases
 
-## TODO: Translations
+### Translations from MediaInfo(thanks to @seigneurfuo):
+
+ar, be, bg, ca, cs, da, de, en, es, eu, fa, fr, gl, gr, hr, hu, hy, it, ja, ka, ko, lt, nl, pl, pt\_BR, pt, ro, ru, sk, sq, sv, th, tr, uk, zh\_CN, zh\_HK and zh\_TW
+
