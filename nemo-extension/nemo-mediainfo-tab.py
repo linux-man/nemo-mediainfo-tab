@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 #coding: utf-8
 
 import urllib
@@ -54,10 +54,10 @@ class MediainfoPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.Nam
     if file.is_directory():
       return
 
-    filename = urllib.unquote(file.get_uri()[7:])
+    filename = urllib.parse.unquote(file.get_uri()[7:])
 
     MI = MediaInfo()
-    MI.Open(filename.decode("utf-8"))
+    MI.Open(filename)
     MI.Option_Static("Complete")
     MI.Option_Static("Language", "file://{}".format(locale_file))
     info = MI.Inform().splitlines()
