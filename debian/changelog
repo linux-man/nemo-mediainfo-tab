@@ -1,3 +1,9 @@
+nemo-mediainfo-tab (0.4) bionic; urgency=medium
+
+  * Running on Nemo 4 (Python3)
+
+ -- Caldas Lopes <joao.caldas.lopes@gmail.com>  Tue, 04 Dec 2018 23:36:14 +0100
+
 nemo-mediainfo-tab (0.3) xenial; urgency=medium
 
   * Translations from MediaInfo

@@ -1,12 +1,19 @@
 #!/usr/bin/python
 #coding: utf-8
 
-import urllib
 import locale, gettext, os
+
+try:
+  from urllib import unquote
+except ImportError:
+  from urllib.parse import unquote
 
 from gi.repository import GObject, Gtk, Nemo
 
-from MediaInfoDLL import *
+try:
+  from MediaInfoDLL import *
+except ImportError:
+  from MediaInfoDLL3 import *
 
 lang = locale.getdefaultlocale()[0]
 locale_path = os.path.join(os.path.dirname(__file__), "nemo-mediainfo-tab/locale")
@@ -54,10 +61,15 @@ class MediainfoPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.Nam
     if file.is_directory():
       return
 
-    filename = urllib.unquote(file.get_uri()[7:])
+    filename = unquote(file.get_uri()[7:])
+
+    try:
+      filename = filename.decode("utf-8")
+    except:
+      pass
 
     MI = MediaInfo()
-    MI.Open(filename.decode("utf-8"))
+    MI.Open(filename)
     MI.Option_Static("Complete")
     MI.Option_Static("Language", "file://{}".format(locale_file))
     info = MI.Inform().splitlines()
