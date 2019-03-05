@@ -22,6 +22,8 @@ if(not os.path.isfile(locale_file)):
   lang = lang.split("_")[0]
   locale_file = os.path.join(locale_path, lang+".csv")
 
+excludeList = ["METADATA_BLOCK_PICTURE"]
+
 GUI = """
 <interface>
   <requires lib="gtk+" version="3.0"/>
@@ -93,21 +95,23 @@ class MediainfoPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.Nam
 
     top = 0
     for line in info:
-      label = Gtk.Label()
-      label.set_markup("<b>" + line[:41].strip() + "</b>")
-      label.set_justify(Gtk.Justification.LEFT)
-      label.set_halign(Gtk.Align.START)
-      label.show()
-      self.grid.attach(label, 0, top, 1, 1)
-      label = Gtk.Label()
-      label.set_text(line[42:].strip())
-      label.set_justify(Gtk.Justification.LEFT)
-      label.set_halign(Gtk.Align.START)
-      label.set_selectable(True)
-      label.set_line_wrap(True)
-      label.show()
-      self.grid.attach(label, 1, top, 1, 1)
-      top += 1
+      tag = line[:41].strip()
+      if tag not in excludeList:
+        label = Gtk.Label()
+        label.set_markup("<b>" + tag + "</b>")
+        label.set_justify(Gtk.Justification.LEFT)
+        label.set_halign(Gtk.Align.START)
+        label.show()
+        self.grid.attach(label, 0, top, 1, 1)
+        label = Gtk.Label()
+        label.set_text(line[42:].strip())
+        label.set_justify(Gtk.Justification.LEFT)
+        label.set_halign(Gtk.Align.START)
+        label.set_selectable(True)
+        label.set_line_wrap(True)
+        label.show()
+        self.grid.attach(label, 1, top, 1, 1)
+        top += 1
 
     return Nemo.PropertyPage(name="NemoPython::mediainfo", label=self.property_label, page=self.mainWindow),
 
