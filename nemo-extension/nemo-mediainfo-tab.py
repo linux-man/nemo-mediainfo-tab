@@ -71,10 +71,12 @@ class MediainfoPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.Nam
       pass
 
     MI = MediaInfo()
-    MI.Open(filename)
     MI.Option_Static("Complete")
+    MI.Option_Static("Inform", "Nothing")
     MI.Option_Static("Language", "file://{}".format(locale_file))
+    MI.Open(filename)
     info = MI.Inform().splitlines()
+    MI.Close()
     if len(info) < 8:
       return
 
