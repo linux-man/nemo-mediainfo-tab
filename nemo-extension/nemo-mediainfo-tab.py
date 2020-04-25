@@ -10,10 +10,7 @@ except ImportError:
 
 from gi.repository import GObject, Gtk, Nemo
 
-try:
-  from MediaInfoDLL import *
-except ImportError:
-  from MediaInfoDLL3 import *
+from MediaInfoDLL3 import *
 
 lang = locale.getdefaultlocale()[0]
 locale_path = os.path.join(os.path.dirname(__file__), "nemo-mediainfo-tab/locale")
