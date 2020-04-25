@@ -1,3 +1,9 @@
+nemo-mediainfo-tab (1.0.2) focal; urgency=medium
+
+  * Python 3 dependencies
+
+ -- Caldas Lopes <joao.caldas.lopes@gmail.com>  Fri, 25 Apr 2020 02:08:23 +0100
+
 nemo-mediainfo-tab (1.0) bionic; urgency=medium
 
   * Force plain text output
