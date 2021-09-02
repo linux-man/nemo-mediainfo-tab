@@ -108,6 +108,8 @@ class MediainfoPropertyPage(GObject.GObject, Nemo.PropertyPageProvider, Nemo.Nam
         label.set_halign(Gtk.Align.START)
         label.set_selectable(True)
         label.set_line_wrap(True)
+        label.set_line_wrap_mode(2) #PANGO_WRAP_WORD_CHAR
+        #label.set_max_width_chars(160)
         label.show()
         self.grid.attach(label, 1, top, 1, 1)
         top += 1

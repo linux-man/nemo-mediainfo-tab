@@ -1,3 +1,9 @@
+nemo-mediainfo-tab (1.0.4) focal; urgency=medium
+
+  * Optional Char Wrap on long strings
+
+ -- Caldas Lopes <joao.caldas.lopes@gmail.com>  Thu, 02 Sep 2021 03:05:23 +0100
+
 nemo-mediainfo-tab (1.0.3) focal; urgency=medium
 
   * Mediainfo 3 dependency
